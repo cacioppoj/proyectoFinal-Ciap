@@ -1,3 +1,14 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
+
+.footer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: rgba(25,118,210);
+}
+
+.footerBox {
+    background-color: rgba(25,118,210);
+}
