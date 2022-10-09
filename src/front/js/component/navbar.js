@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import ApartmentIcon from '@mui/icons-material/Apartment';
 
 
 
@@ -12,12 +13,16 @@ export const Navbar = () => {
 	return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar className="toolbar">
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            LOGO
+            <ApartmentIcon/>Hotelarium
           </Typography>
-          <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-          <Button color="inherit">Buscar</Button>
+          <div className="menuBotones">
+           <Button color="inherit">Home</Button>
+           <Button color="inherit">Buscar</Button>
+           <Button color="inherit">Favoritos</Button>
+          </div>
+          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </Box>
