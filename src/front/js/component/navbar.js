@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import ApartmentIcon from '@mui/icons-material/Apartment';
+import { Link } from "react-router-dom";
 
 
 
@@ -18,8 +19,12 @@ export const Navbar = () => {
             <ApartmentIcon/>Hotelarium
           </Typography>
           <div className="menuBotones">
-           <Button color="inherit">Home</Button>
-           <Button color="inherit">Buscar</Button>
+            <Link to="/">
+             <Button color="inherit">Home</Button>
+            </Link>
+           <Link to="/hotels">
+            <Button color="inherit">Hotels</Button>
+           </Link>
            <Button color="inherit">Favoritos</Button>
           </div>
           <Button color="inherit">Login</Button>

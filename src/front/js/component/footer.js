@@ -14,9 +14,9 @@ export default function FooterApp() {
 	<Box sx={{ width: 500 }}>
       <BottomNavigation className='footerBox'
       >
-        <BottomNavigationAction sx={{background: "rgba(25,118,210)"}} label="Recents" icon={<FacebookIcon/>} />
-        <BottomNavigationAction sx={{background: "rgba(25,118,210)"}}  label="Favorites" icon={<InstagramIcon/>} />
-        <BottomNavigationAction sx={{background: "rgba(25,118,210)"}}  label="Nearby" icon={<TwitterIcon/>} />
+        <BottomNavigationAction sx={{background: "rgba(25,118,210)"}} label="Recents" icon={<FacebookIcon sx={{color:"white"}}/>}/>
+        <BottomNavigationAction sx={{background: "rgba(25,118,210)"}}  label="Favorites" icon={<InstagramIcon sx={{color:"white"}}/>}/>
+        <BottomNavigationAction sx={{background: "rgba(25,118,210)"}}  label="Nearby" icon={<TwitterIcon sx={{color:"white"}}/>}/>
       </BottomNavigation>
     </Box>
 	</div>
