@@ -1,15 +1,12 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Button from '@mui/material/Button';
 
 export default function MyCard() {
   return (
@@ -17,7 +14,7 @@ export default function MyCard() {
       <CardMedia
         component="img"
         height="194"
-        image="/static/images/cards/paella.jpg"
+        image="https://picsum.photos/200/300?grayscale"
         alt="Paella dish"
       />
       <CardContent>
@@ -27,13 +24,11 @@ export default function MyCard() {
           if you like.
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
+      <CardActions sx={{ justifyContent: 'space-between' }}>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
+        <Button color="inherit" sx={{background: "rgba(25,118,210)", color: "white", float: "right"}}>Ver Mas</Button>
       </CardActions>
     </Card>
     

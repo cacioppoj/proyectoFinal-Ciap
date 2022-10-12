@@ -5,3 +5,28 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+
+.boxPrincipal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+}
+
+.boxIcon{
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    color: rgba(25,118,210);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+
+/* .icon{
+    height: 50px;
+    width: 50px;
+} */
