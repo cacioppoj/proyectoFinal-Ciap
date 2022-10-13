@@ -1,14 +1,13 @@
 import React from "react";
-import { Paper, Button } from "@mui/material";
+import { Paper, Button, Grid } from "@mui/material";
 
 const ItemCarousel = (props) => {
   return (
-    <Paper>
+    <Grid item xs={12}>
       <h2>{props.item.name}</h2>
       <p>{props.item.description}</p>
-
-      <Button className="CheckButton">Check it out!</Button>
-    </Paper>
+      <img src={props.item.img}></img>
+    </Grid>
   );
 };
 
