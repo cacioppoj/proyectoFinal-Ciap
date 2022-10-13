@@ -1,6 +1,7 @@
 import { Grid, Paper, Button } from "@mui/material";
 import React, { Fragment, useState } from "react";
 import CarouselCIAP from "./CarouselCIAP";
+import Modal from "./Modal";
 
 import hotel1 from "./imgPrueba/hotel1.jpeg";
 import hotel2 from "./imgPrueba/hotel2.jpeg";
@@ -12,6 +13,15 @@ const Detail = (props) => {
   //   onChange,
   //   data: { id, description, done },
   // } = props;
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <>
@@ -39,11 +49,11 @@ const Detail = (props) => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={12} sx={{paddingTop: '10px'}}>
-              <Paper elevation={12}>
+            <Grid item xs={12} sx={{ paddingTop: "10px" }}>
+              <Paper elevation={12} sx={{ bgcolor: "#ddd" }}>
                 <h2>Hotel Eurobuilging</h2>
                 <p>es muy bonito</p>
-                <Button className="CheckButton">Reserva!</Button>
+                <Modal></Modal>
               </Paper>
             </Grid>
           </Grid>
