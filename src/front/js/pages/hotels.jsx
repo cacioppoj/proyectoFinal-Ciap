@@ -16,27 +16,9 @@ export const Hotels = () => {
 	const { store, actions } = useContext(Context);
 	const [hotels , setHotels] = useState([]);
 
-	// useEffect(() => {
-	// 	const options = {
-	// 	  method: "GET",
-	// 	  headers: {
-	// 		"X-RapidAPI-Key": "5695473c26mshb8d6f1e8df79a74p1667bajsn8467602b42e0",
-	// 		"X-RapidAPI-Host": "hotels-com-provider.p.rapidapi.com",
-	// 	  },
-	// 	};
-		
-	// 	const ObtenerAPI = async () => {
-	// 		const url =
-	// 		'https://hotels-com-provider.p.rapidapi.com/v1/hotels/search?checkin_date=2022-11-26&checkout_date=2022-11-28&sort_order=STAR_RATING_HIGHEST_FIRST&destination_id=289363&adults_number=2&locale=en_US&currency=ANG';
-	// 		const respuesta = await fetch(url, options);
-	// 		const resultado = await respuesta.json();
-	
-	// 		console.log(resultado.data);
-	// 	  };
-	// 	  ObtenerAPI();
-		  
-		
-	//   }, []);
+	useEffect(() => {
+		actions.getData()
+	  }, []);
 
 	return (
 		<Box sx={{ flexGrow: 1, margin: "50px", padding: "20px" }}>
@@ -50,33 +32,12 @@ export const Hotels = () => {
       <Grid container spacing={2} sx={{marginTop: "40px"}}>
        		 <Grid item xs={6} md={8}>
 				<Grid container spacing={2} columns={12}>
-								<Grid item xs={4}>
-									<MyCard/>
-						  		</Grid>
-								  {/* <Grid item xs={4}>
-									<MyCard/>
-						  		</Grid>
-								  <Grid item xs={4}>
-									<MyCard/>
-						  		</Grid>
-								  <Grid item xs={4}>
-									<MyCard/>
-						  		</Grid>
-								  <Grid item xs={4}>
-									<MyCard/>
-						  		</Grid>
-								  <Grid item xs={4}>
-									<MyCard/>
-						  		</Grid> */}
-					{/* {
-						hotels.map((hotel,id)=>{
-							return(
-								<Grid item xs={4}>
-									<h1 key={id}>{hotel.title}</h1>
-						  		</Grid>
-							)
-						})
-					} */}
+								{
+									store.hotels?.map((hotel,id)=>(
+									<Grid item xs={4} key={id}>
+										<MyCard hotel={hotel}/>
+									  </Grid>))
+								}
      			 </Grid>
      	  	</Grid>
        			 <Grid item xs={6} md={4}>
@@ -84,10 +45,10 @@ export const Hotels = () => {
 					Busquedas recientes
     			  </Typography>
 				  <Box sx={{marginTop:"20px"}}>
-					  <MyCard/>
+					  {/* <MyCard/> */}
 				  </Box>
 				  <Box sx={{marginTop:"20px"}}>
-					  <MyCard/>
+					  {/* <MyCard/> */}
 				  </Box>
        		 </Grid>
     	</Grid>

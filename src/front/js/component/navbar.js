@@ -18,15 +18,13 @@ export const Navbar = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <ApartmentIcon/>Hotelarium
           </Typography>
-          <div className="menuBotones">
-            <Link to="/">
-             <Button color="inherit">Home</Button>
+            <Link component="button" sx={{color:'white'}} to="/">
+             Home
             </Link>
            <Link to="/hotels">
             <Button color="inherit">Hotels</Button>
            </Link>
            <Button color="inherit">Favoritos</Button>
-          </div>
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>

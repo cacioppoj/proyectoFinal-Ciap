@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Button from '@mui/material/Button';
 
-export default function MyCard() {
+export default function MyCard({hotel}) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -19,9 +19,7 @@ export default function MyCard() {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+          {hotel.name}
         </Typography>
       </CardContent>
       <CardActions sx={{ justifyContent: 'space-between' }}>
