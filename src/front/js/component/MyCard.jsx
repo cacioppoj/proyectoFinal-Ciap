@@ -10,7 +10,7 @@ import Button from '@mui/material/Button';
 
 export default function MyCard({hotel}) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ minWidth: "345px" }}>
       <CardMedia
         component="img"
         height="194"

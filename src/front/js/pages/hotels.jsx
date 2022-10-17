@@ -14,7 +14,6 @@ import Typography from '@mui/material/Typography';
 
 export const Hotels = () => {
 	const { store, actions } = useContext(Context);
-	const [hotels , setHotels] = useState([]);
 
 	useEffect(() => {
 		actions.getData()
@@ -22,35 +21,18 @@ export const Hotels = () => {
 
 	return (
 		<Box sx={{ flexGrow: 1, margin: "50px", padding: "20px" }}>
-			<Box>
-				<TextField id="standard-basic" label="Standard" variant="standard" />
-				<Button sx={{background: "rgba(25,118,210)", color: "white"}}>Buscar</Button>
-			</Box>
-			<Typography variant="h1" gutterBottom sx={{marginTop: "30px"}}>
+			<Typography variant="h1" gutterBottom sx={{fontSize:"3rem"}}>
 				Hoteles en Caracas
    		   </Typography>
       <Grid container spacing={2} sx={{marginTop: "40px"}}>
-       		 <Grid item xs={6} md={8}>
-				<Grid container spacing={2} columns={12}>
+			<Grid container spacing={2} columns={12}>
 								{
 									store.hotels?.map((hotel,id)=>(
-									<Grid item xs={4} key={id}>
+									<Grid item xs={12} md={4} sm={6} key={id}>
 										<MyCard hotel={hotel}/>
 									  </Grid>))
 								}
-     			 </Grid>
-     	  	</Grid>
-       			 <Grid item xs={6} md={4}>
-					<Typography variant="h3" gutterBottom>
-					Busquedas recientes
-    			  </Typography>
-				  <Box sx={{marginTop:"20px"}}>
-					  {/* <MyCard/> */}
-				  </Box>
-				  <Box sx={{marginTop:"20px"}}>
-					  {/* <MyCard/> */}
-				  </Box>
-       		 </Grid>
+     		</Grid>
     	</Grid>
   	  </Box>
 	);

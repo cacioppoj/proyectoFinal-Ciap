@@ -6,11 +6,12 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import ApartmentIcon from '@mui/icons-material/Apartment';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 
 export const Navbar = () => {
+  const navigate = useNavigate();
 	return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -18,14 +19,10 @@ export const Navbar = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <ApartmentIcon/>Hotelarium
           </Typography>
-            <Link component="button" sx={{color:'white'}} to="/">
-             Home
-            </Link>
-           <Link to="/hotels">
-            <Button color="inherit">Hotels</Button>
-           </Link>
-           <Button color="inherit">Favoritos</Button>
-          <Button color="inherit">Login</Button>
+            <Button color="inherit" onClick={()=>navigate("/")}>Home</Button>
+            <Button color="inherit" onClick={()=>navigate("/hotels")}>Hotels</Button>
+            <Button color="inherit">Favoritos</Button>
+            <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </Box>

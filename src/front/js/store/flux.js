@@ -44,9 +44,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					  bl_longitude: '96.473209',
 					  tr_longitude: '130.149359',
 					  tr_latitude: '18.838442',
-					  limit: '4',
-					  currency: 'USD',
-					  offset: '3',
+					  limit: '8',
+					  currency: 'USD'
 					},
 					headers: {
 					  'X-RapidAPI-Key': '3149835cafmsh2a04639bc2ffd55p152938jsna9deae1c69fd',

@@ -12,13 +12,3 @@
 .footerBox {
     background-color: rgba(25,118,210);
 }
-
-.toolbar {
-    display: flex;
-    justify-content: space-between;
-    
-}
-
-link{
-    text-decoration-style: none;
-}
