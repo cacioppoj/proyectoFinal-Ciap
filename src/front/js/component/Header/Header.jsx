@@ -1,17 +1,16 @@
 import React, { useState } from "react";
-// import { Autocomplete } from "@react-google-maps/api";
+import { Autocomplete } from "@react-google-maps/api";
 import {
   AppBar,
   Toolbar,
   Typography,
   InputBase,
   Box,
-  Button,
   Link,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
-import { useNavigate } from "react-router-dom";
+import "../../index.css";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -55,29 +54,34 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export const Navbar = () => {
-  const navigate = useNavigate();
+const Header = ({ setCordenadas }) => {
+  // const [autocomplete, setAutocomplete ] = useState(null)
+  // const onLoad = (autoC) => setAutocomplete(autoC)
+
+  // const onPlaceChanged = () =>{
+  //   const lat = autocomplete.getPlace().geometry.location.lat()
+  //   const lng = autocomplete.getPlace().geometry.location.lng()
+
+  //   setCordenadas({lat, lng});
+  // }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar className="header">
           <Typography
             variant="h5"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "center" } }}
+            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
             Hoteles
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Button color="inherit" onClick={() => navigate("/")}>
-              Home
-            </Button>
-            <Button color="inherit" onClick={() => navigate("/hotels")}>
-              Hotels
-            </Button>
-            <Button color="inherit">Favoritos</Button>
-            <Button color="inherit">Login</Button>
-          </Box>
-
+          <Link
+            sx={{ color: "white", marginRight: "10px" }}
+            underline="none"
+            component="button"
+            to=""
+          >
+            Home
+          </Link>
           <Box display="flex" sx={{}}>
             <Typography variant="h6">Busca tus lugares</Typography>
             {/* <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}> */}
@@ -92,19 +96,7 @@ export const Navbar = () => {
         </Toolbar>
       </AppBar>
     </Box>
-
-    // <Box sx={{ flexGrow: 1 }}>
-    //   <AppBar position="static">
-    //     <Toolbar className="toolbar">
-    //       <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-    //         <ApartmentIcon/>Hotelarium
-    //       </Typography>
-    //         <Button color="inherit" onClick={()=>navigate("/")}>Home</Button>
-    //         <Button color="inherit" onClick={()=>navigate("/hotels")}>Hotels</Button>
-    //         <Button color="inherit">Favoritos</Button>
-    //         <Button color="inherit">Login</Button>
-    //     </Toolbar>
-    //   </AppBar>
-    // </Box>
   );
 };
+
+export default Header;
