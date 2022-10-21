@@ -49,7 +49,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           },
           headers: {
             "X-RapidAPI-Key":
-              "3149835cafmsh2a04639bc2ffd55p152938jsna9deae1c69fd",
+              "c1f53e8dc0mshf9ed4ba639dda01p1f13a4jsn00c19e76f581",
             "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
           },
         };
