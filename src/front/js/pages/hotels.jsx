@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import MyCard from "../component/Card/MyCard.jsx";
+import Header from "../component/Header/Header.jsx";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -19,6 +20,8 @@ export const Hotels = () => {
   }, []);
 
   return (
+    <>
+    <Header/>
     <Box sx={{ flexGrow: 1, margin: "50px", padding: "20px" }}>
       <Typography variant="h1" gutterBottom sx={{ fontSize: "3rem" }}>
         {}
@@ -33,5 +36,8 @@ export const Hotels = () => {
         </Grid>
       </Grid>
     </Box>
+    </>
   );
+    
+    
 };

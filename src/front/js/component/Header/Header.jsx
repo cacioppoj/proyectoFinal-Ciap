@@ -6,11 +6,11 @@ import {
   Typography,
   InputBase,
   Box,
-  Link,
+  Button,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
-import "../../index.css";
+import { useNavigate } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -55,15 +55,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const Header = ({ setCordenadas }) => {
-  // const [autocomplete, setAutocomplete ] = useState(null)
-  // const onLoad = (autoC) => setAutocomplete(autoC)
+  const navigate = useNavigate();
 
-  // const onPlaceChanged = () =>{
-  //   const lat = autocomplete.getPlace().geometry.location.lat()
-  //   const lng = autocomplete.getPlace().geometry.location.lng()
+  const [autocomplete, setAutocomplete] = useState(null);
+  const onLoad = (autoC) => setAutocomplete(autoC);
 
-  //   setCordenadas({lat, lng});
-  // }
+  const onPlaceChanged = () => {
+    const lat = autocomplete.getPlace().geometry.location.lat();
+    const lng = autocomplete.getPlace().geometry.location.lng();
+
+    setCordenadas({ lat, lng });
+  };
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -74,24 +76,26 @@ const Header = ({ setCordenadas }) => {
           >
             Hoteles
           </Typography>
-          <Link
-            sx={{ color: "white", marginRight: "10px" }}
-            underline="none"
-            component="button"
-            to=""
-          >
-            Home
-          </Link>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            <Button color="inherit" onClick={() => navigate("/")}>
+              Home
+            </Button>
+            <Button color="inherit" onClick={() => navigate("/hotels")}>
+              Hotels
+            </Button>
+            <Button color="inherit">Favoritos</Button>
+            <Button color="inherit">Login</Button>
+          </Box>
           <Box display="flex" sx={{}}>
             <Typography variant="h6">Busca tus lugares</Typography>
-            {/* <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}> */}
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase placeholder="Buscar.." />
-            </Search>
-            {/* </Autocomplete> */}
+            <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
+              <Search>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase placeholder="Buscar.." />
+              </Search>
+            </Autocomplete>
           </Box>
         </Toolbar>
       </AppBar>

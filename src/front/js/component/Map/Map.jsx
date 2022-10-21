@@ -5,12 +5,9 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import "../../../styles/index.css";
 
-const Map = ({}) => {
+const Map = ({ setCordenadas, setBounds, cordenadas }) => {
   const escritorio = useMediaQuery("(min-width: 600px)");
-  const cordenadas = {
-    lat: 0,
-    lng: 0,
-  };
+
   return (
     <div className="map">
       <GoogleMapReact
@@ -19,10 +16,10 @@ const Map = ({}) => {
         center={cordenadas}
         margin={[50, 50, 50, 50]}
         zoom={14}
-        // onChange={(e) => {
-        //   setCordenadas({ lat: e.center.lat, lng: e.center.lng })
-        //   setBounds({ne: e.marginBounds.ne , sw: e.marginBounds.sw })
-        // }}
+        onChange={(e) => {
+          setCordenadas({ lat: e.center.lat, lng: e.center.lng });
+          setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
+        }}
       >
         {/* {lugares?.map((lugar, i) => (
           <div

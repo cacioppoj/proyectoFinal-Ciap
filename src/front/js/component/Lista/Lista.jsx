@@ -10,7 +10,7 @@ import {
   Select,
 } from "@mui/material";
 
-export const List = () => {
+export const Lista = () => {
   return (
     <div>
       <h1>hola</h1>
