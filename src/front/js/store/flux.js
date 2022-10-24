@@ -36,26 +36,42 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-      getData: async () => {
-        const URL =
-          "https://travel-advisor.p.rapidapi.com/hotels/list-in-boundary";
-        const options = {
-          params: {
-            bl_latitude: "27.847676",
-            bl_longitude: "96.473209",
-            tr_longitude: "130.149359",
-            tr_latitude: "18.838442",
-            currency: "USD",
-          },
-          headers: {
-            "X-RapidAPI-Key":
-              "c1f53e8dc0mshf9ed4ba639dda01p1f13a4jsn00c19e76f581",
-            "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
-          },
-        };
+      getData: async (tipo, sw, ne) => {
+        // const URL =
+        //   "https://travel-advisor.p.rapidapi.com/hotels/list-in-boundary";
+        // const options = {
+        //   params: {
+        //     bl_latitude: "27.847676",
+        //     bl_longitude: "96.473209",
+        //     tr_longitude: "130.149359",
+        //     tr_latitude: "18.838442",
+        //     currency: "USD",
+        //   },
+        //   headers: {
+        //     "X-RapidAPI-Key":
+        //       "c1f53e8dc0mshf9ed4ba639dda01p1f13a4jsn00c19e76f581",
+        //     "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
+        //   },
+        // };
 
         try {
-          const response = await axios.get(URL, options);
+          const response = await axios.get(
+            `https://travel-advisor.p.rapidapi.com/hotels/list-in-boundary`,
+            {
+              params: {
+                bl_latitude: sw.lat,
+                bl_longitude: ne.lng,
+                tr_longitude: sw.lng,
+                tr_latitude: ne.lat,
+                currency: "USD",
+              },
+              headers: {
+                "X-RapidAPI-Key":
+                  "c1f53e8dc0mshf9ed4ba639dda01p1f13a4jsn00c19e76f581",
+                "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
+              },
+            }
+          );
           console.log(response.data.data);
           setStore({ hotels: response.data.data });
         } catch (error) {
