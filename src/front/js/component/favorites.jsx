@@ -8,7 +8,7 @@ export const Favorites = () => {
 		<nav className="navbar navbar-light bg-light">
 			<div className="container">
 				<div className="ml-auto">
-					<Link to="/demo">
+					<Link to="/favoritos2">
 					<Button variant="contained">Favorites</Button>
 					</Link>
 				</div>

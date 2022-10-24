@@ -1,3 +1,50 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
+body {
+  background: gray;
+}
+.imgdetails {
+  width: 400px;
+  height: 350px;
+}
+.cardDetail {
+  width: 400px;
+  height: 400px;
+  text-align: center;
+  font-size: 150%;
+  color: #7e2121;
+}
+.titulo {
+  color: #b32e2e;
+  padding-left: 8%;
+}
+.card {
+  background: gray;
+  margin-left: 8.3%;
+}
+.imgnavbar {
+  padding-top: 15%;
+  width: 80px;
+  height: 80px;
+}
+.favorites {
+  font-size: 120%;
+}
+.imgcard {
+  width: 250px;
+  height: 260px;
+}
+.detalles {
+  text-align: center;
+}
+.mini-details {
+  text-align: center;
+  margin: auto;
+}
+.corazon {
+  font-size: 120%;
+}
+.mas {
+  display: none;
+}
