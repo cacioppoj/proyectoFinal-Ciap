@@ -83,7 +83,7 @@ const Header = ({ setCordenadas }) => {
             <Button color="inherit" onClick={() => navigate("/hotels")}>
               Hotels
             </Button>
-            <Button color="inherit">Favoritos</Button>
+            <Button onClick={() => navigate("/favorites")} color="inherit">Favoritos</Button>
             <Button color="inherit">Login</Button>
           </Box>
           <Box display="flex" sx={{}}>

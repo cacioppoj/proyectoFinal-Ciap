@@ -51,9 +51,9 @@ export default function MyCard({ hotel }) {
           <Button variant="outlined" sx={{ color: "#1CA1F1", float: "right" }}>
             Ver Mas
           </Button>
-          <IconButton aria-label="add to favorites">
+          <Button>
             <FavoriteIcon />
-          </IconButton>
+          </Button>
         </CardActions>
       </Card>
     </>
